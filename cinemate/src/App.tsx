@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Movie from './pages/Movie';
 
+import SearchMovies from './pages/SearchMovies';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
   },
   {
     path: '/movie/upcoming',
+    element: <Movie />,
+  },
+  {
+    path: '/search/movie',
     element: <Movie />,
   },
 ]);

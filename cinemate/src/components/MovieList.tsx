@@ -4,12 +4,11 @@ import { useLocation } from 'react-router-dom';
 
 const MovieList = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
+
   const { data: movies } = useFetch(pathname);
-  console.log(movies);
 
   return (
-    <main className='grid grid-cols-2 md:grid-cols-4 gap-3'>
+    <main className='grid grid-cols-2 md:grid-cols-4 gap-y-7 content-between '>
       {movies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
       ))}
