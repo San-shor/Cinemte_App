@@ -1,6 +1,7 @@
 import { Navbar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import SearchBar from '../SearchBar';
 
 const Header = () => {
   return (
@@ -11,6 +12,9 @@ const Header = () => {
           Cinemate
         </span>
       </Navbar.Brand>
+      <div className='flex md:order-2'>
+        <SearchBar />
+      </div>
 
       <Navbar.Collapse>
         <Navbar.Link

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Movie } from '../type/movie';
 
-const useSearch = (queryTerm) => {
+const useSearch = (queryTerm: string | null): { data: Movie[] } => {
   const [data, setData] = useState([]);
 
   useEffect(() => {

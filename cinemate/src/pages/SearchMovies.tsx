@@ -10,10 +10,19 @@ const SearchMovies = () => {
   console.log(movies);
 
   return (
-    <main className='grid grid-cols-2 md:grid-cols-4 gap-7 '>
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+    <main>
+      <section className='py-7'>
+        <p className='text-cyan-700 font-semibold text-3xl '>
+          {movies.length === 0
+            ? `No result found for '${queryParams}'`
+            : `Result for '${queryParams}'`}
+        </p>
+      </section>
+      <div className='grid grid-cols-2 md:grid-cols-4 gap-7 '>
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </div>
     </main>
   );
 };

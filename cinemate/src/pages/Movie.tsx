@@ -1,6 +1,6 @@
 import Header from '../components/Header/Header';
 import MovieList from '../components/MovieList';
-import SearchBar from '../components/SearchBar';
+
 import SearchMovies from './SearchMovies';
 import { useSearchParams } from 'react-router-dom';
 
@@ -11,10 +11,7 @@ const Movie = () => {
     <main>
       <Header />
 
-      <div className='p-16 flex flex-col '>
-        <div className='self-end '>
-          <SearchBar />
-        </div>
+      <div className='p-16'>
         {queryParams ? <SearchMovies /> : <MovieList />}
         {/* <SearchMovies />
         <MovieList /> */}
