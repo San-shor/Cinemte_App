@@ -1,6 +1,7 @@
 import { Card } from 'flowbite-react';
 import { Movie } from '../../type/movie';
 import { Rating } from 'flowbite-react';
+import { Link } from 'react-router-dom';
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
@@ -28,11 +29,11 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
         <span className='text-normal  text-gray-900 dark:text-white'>
           {movie.release_date}
         </span>
-        <a
-          href='#'
+        <Link
+          to={`/movie/${movie.id}`}
           className='rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800'>
           View Details
-        </a>
+        </Link>
       </div>
     </Card>
   );

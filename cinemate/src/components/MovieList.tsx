@@ -6,6 +6,7 @@ const MovieList = () => {
   const { pathname } = useLocation();
 
   const { data: movies } = useFetch(pathname);
+  console.log(movies);
 
   return (
     <main className='grid grid-cols-2 md:grid-cols-4 gap-y-7 content-between '>
