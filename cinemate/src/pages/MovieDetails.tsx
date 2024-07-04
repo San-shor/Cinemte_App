@@ -6,10 +6,9 @@ const MovieDetails = () => {
   const params = useParams();
 
   const { data: movieDetails } = useGetMovieDetails(params.id);
-  console.log(movieDetails);
 
   return (
-    <main className='p-8'>
+    <main className='p-20'>
       <div className='flex flex-col md:flex-row items-center gap-8'>
         <div>
           <figure className='relative cursor-pointer'>
