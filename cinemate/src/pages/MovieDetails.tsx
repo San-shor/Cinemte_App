@@ -10,7 +10,7 @@ const MovieDetails = () => {
   return (
     <main className='p-20'>
       <div className='flex flex-col md:flex-row items-center gap-8'>
-        <div>
+        <div className='w-4/12'>
           <figure className='relative cursor-pointer'>
             <img
               className='rounded-lg shadow-lg'
@@ -22,7 +22,7 @@ const MovieDetails = () => {
             </figcaption>
           </figure>
         </div>
-        <div className='max-w-md w-full space-y-4'>
+        <div className='max-w-md w-8/12 space-y-4 '>
           <h2 className='text-3xl font-bold text-gray-900 dark:text-white'>
             {movieDetails?.title}
           </h2>
@@ -60,17 +60,19 @@ const MovieDetails = () => {
           <div></div>
         </div>
       </div>
-      <span className='flex flex-row gap-4 text-2xl font-bold mt-10'>
-        Overview:
-        <p className='text-lg text-gray-700 dark:text-gray-200 font-[400]'>
+
+      <span className='flex flex-row gap-4 text-lg font-bold mt-10 items-start'>
+        <div className='w-1/12'>Overview:</div>
+
+        <p className='w-11/12 text-lg text-gray-700 dark:text-gray-200 font-[400]'>
           {movieDetails?.overview}
         </p>
       </span>
       <div className='flex flex-row gap-2 mt-4'>
-        <span className='block text-gray-800 dark:text-gray-200 font-semibold'>
+        <span className='block w-1/12 text-gray-800 dark:text-gray-200 font-semibold'>
           Language:
         </span>
-        <div className='flex flex-wrap gap-2'>
+        <div className='flex flex-wrap gap-2 w-11/12'>
           {movieDetails?.spoken_languages.map((item) => (
             <Badge key={item.iso_639_1} color='info' size='md'>
               {item.name}
@@ -79,10 +81,10 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className='flex flex-row gap-2 mt-4'>
-        <span className='block text-gray-800 dark:text-gray-200 font-semibold'>
+        <span className='block w-1/12 text-gray-800 dark:text-gray-200 font-semibold'>
           Origin:
         </span>
-        <div className='flex flex-wrap gap-2'>
+        <div className='flex flex-wrap gap-2 w-11/12'>
           {movieDetails?.origin_country.map((item) => (
             <Badge key={item} color='info' size='md'>
               {item}

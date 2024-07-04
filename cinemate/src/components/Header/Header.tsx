@@ -1,9 +1,11 @@
 import { Navbar } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import SearchBar from '../SearchBar';
 
 const Header = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
   return (
     <Navbar className='bg-[#111827] py-6'>
       <Navbar.Brand as={Link} href='https://flowbite-react.com'>
@@ -18,18 +20,24 @@ const Header = () => {
 
       <Navbar.Collapse>
         <Navbar.Link
-          active
-          className='text-xl hover:text-black transition duration-300 font-extrabold'>
+          active={pathname === '/'}
+          className='text-xl hover:text-black  text-white transition duration-300  '>
           <Link to={'/'}>All Movies</Link>
         </Navbar.Link>
-        <Navbar.Link className='text-xl  text-white '>
+        <Navbar.Link
+          className='text-xl  text-white transition duration-300 '
+          active={pathname?.includes('popular')}>
           <Link to={'/movie/popular'}>Popular</Link>
         </Navbar.Link>
-        <Navbar.Link className='text-xl text-white'>
+        <Navbar.Link
+          className='text-xl text-white transition duration-300 '
+          active={pathname?.includes('top-rated')}>
           <Link to={'/movie/top-rated'}>Top Rated</Link>
         </Navbar.Link>
 
-        <Navbar.Link className='text-xl  text-white'>
+        <Navbar.Link
+          className='text-xl  text-white transition duration-300 '
+          active={pathname?.includes('upcoming')}>
           <Link to={'/movie/upcoming'}>Upcoming</Link>
         </Navbar.Link>
       </Navbar.Collapse>
